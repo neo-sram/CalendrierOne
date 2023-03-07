@@ -50,7 +50,7 @@ packages:
     source: hosted
     version: "1.0.5"
   dio:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: dio
       sha256: "3709d74615bba5e443eb141f6a7f4bcc4788f8fae6f743edadfb79c2a8e6287e"
@@ -104,6 +104,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  hexcolor:
+    dependency: "direct dev"
+    description:
+      name: hexcolor
+      sha256: c07f4bbb9095df87eeca87e7c69e8c3d60f70c66102d7b8d61c4af0453add3f6
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   http_parser:
     dependency: transitive
     description:
@@ -209,7 +217,7 @@ packages:
     source: hosted
     version: "4.2.4"
   shared_preferences:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: shared_preferences
       sha256: ee6257848f822b8481691f20c3e6d2bfee2e9eccb2a3d249907fcfb198c55b41
@@ -264,14 +272,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-  sharedpreference:
-    dependency: "direct main"
-    description:
-      name: sharedpreference
-      sha256: d35d40df80bdd2eba0906d424e2df1b2d60809f07753688ed11c7faec9cc686b
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -286,7 +286,7 @@ packages:
     source: hosted
     version: "1.9.1"
   sqflite:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: sqflite
       sha256: "851d5040552cf911f4cabda08d003eca76b27da3ed0002978272e27c8fbf8ecc"
