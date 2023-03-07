@@ -1,6 +1,8 @@
 import 'package:calendrier/ui/const/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/reuseble.dart';
+
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});
 
@@ -13,13 +15,9 @@ class GetStarted extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 30,
-                ),
+                space(value: 30.0),
                 Image.asset('assets/images/started_screen.png'),
-                const SizedBox(
-                  height: 70.0,
-                ),
+                space(value: 70.0),
                 Text(
                   'Welcome',
                   style: TextStyle(
@@ -34,9 +32,7 @@ class GetStarted extends StatelessWidget {
                     color: Colors.black54,
                   ),
                 ),
-                const SizedBox(
-                  height: 150,
-                ),
+                space(value: 150),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     foregroundColor: secondColor,
