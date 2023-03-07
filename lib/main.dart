@@ -10,8 +10,10 @@ class Calendrier extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: GetStarted(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const GetStarted(),
+      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
     );
   }
 }
