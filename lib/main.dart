@@ -1,4 +1,6 @@
+import 'package:calendrier/ui/const/colors.dart';
 import 'package:calendrier/ui/pages/get_started.dart';
+import 'package:calendrier/ui/pages/onBoarding/auth.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,8 +14,18 @@ class Calendrier extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const GetStarted(),
-      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+      home: const StudentAuth(),
+      theme: ThemeData(
+        scaffoldBackgroundColor: secondColor,
+      ),
+      routes: {
+        "started": (context) {
+          return const GetStarted();
+        },
+        "studentAuth": (context) {
+          return const StudentAuth();
+        }
+      },
     );
   }
 }
