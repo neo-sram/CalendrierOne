@@ -14,7 +14,6 @@ class ApiRequests {
 
   ApiRequests() {
     _dio;
-
     interceptorsInit();
   }
 
