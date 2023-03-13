@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:calendrier/data/server/api/const.dart';
 
 class ApiRequests {
-  final _dio = Dio(
+  static final _dio = Dio(
     BaseOptions(
       baseUrl: ApiConsts.url,
       responseType: ResponseType.plain,
