@@ -1,4 +1,8 @@
+// ignore_for_file: unused_import
+
 import 'package:calendrier/ui/const/colors.dart';
+import 'package:calendrier/ui/const/pages.dart';
+import 'package:calendrier/ui/pages/onBoarding/auth.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/reuseble.dart';
@@ -8,6 +12,7 @@ class GetStarted extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final route = RoutesOfPages().routes;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -42,7 +47,9 @@ class GetStarted extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(route.keys.elementAt(1));
+                  },
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
