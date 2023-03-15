@@ -1,10 +1,4 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
 part of 'api_model_single.dart';
-
-// **************************************************************************
-// JsonSerializableGenerator
-// **************************************************************************
 
 Day _$DayFromJson(Map<String, dynamic> json) => Day(
       id: json['id'] as int,

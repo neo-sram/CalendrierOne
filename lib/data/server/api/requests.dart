@@ -21,36 +21,34 @@ class ApiRequests {
     _dio;
   }
 
-  static Future<Response?> getAllCalender() async {
+  static Future<List<Map<dynamic, dynamic>>> getAllCalender() async {
     try {
-      final responseAll =
-          await _dio.get(ApiConsts.url + ApiConsts.getAllDataRequest);
+      final responseAll = await _dio.get(ApiConsts.getAllDataRequest);
       if (responseAll.statusCode == 200) {
-        return responseAll;
+        return responseAll.data;
       }
     } catch (e) {}
-    return null;
+    return [{}];
   }
 
-  static Future<Response?> getDayByID({required int id}) async {
+  static Future<Map<String, dynamic>> getDayByID({required int id}) async {
     try {
-      final responceId =
-          await _dio.get(ApiConsts.url + ApiConsts.getDataById + id.toString());
+      final responceId = await _dio.get(ApiConsts.getDataById + id.toString());
       if (responceId.statusCode == 200) {
-        return responceId;
+        return responceId.data;
       }
     } catch (e) {}
-    return null;
+    return {};
   }
 
-  static Future<Response?> getDayByDay({required String dayName}) async {
+  static Future<Map<String, dynamic>> getDayByDay(
+      {required String dayName}) async {
     try {
-      final responceDay =
-          await _dio.get(ApiConsts.url + ApiConsts.getDataByDayName + dayName);
+      final responceDay = await _dio.get(ApiConsts.getDataByDayName + dayName);
       if (responceDay.statusCode == 200) {
-        return responceDay;
+        return responceDay.data;
       }
     } catch (e) {}
-    return null;
+    return {};
   }
 }
