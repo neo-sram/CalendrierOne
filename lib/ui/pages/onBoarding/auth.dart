@@ -1,7 +1,6 @@
 import 'package:calendrier/ui/const/colors.dart';
 import 'package:flutter/material.dart';
-
-import '../../widgets/reuseble.dart';
+import '../../widgets/reusable.dart';
 
 class StudentAuth extends StatelessWidget {
   const StudentAuth({super.key});

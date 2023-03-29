@@ -4,8 +4,7 @@ import 'package:calendrier/ui/const/colors.dart';
 import 'package:calendrier/ui/const/pages.dart';
 import 'package:calendrier/ui/pages/onBoarding/auth.dart';
 import 'package:flutter/material.dart';
-
-import '../widgets/reuseble.dart';
+import '../widgets/reusable.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});
