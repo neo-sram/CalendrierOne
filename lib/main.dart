@@ -1,7 +1,6 @@
 // ignore_for_file: unused_import
 
 import 'package:calendrier/ui/const/colors.dart';
-import 'package:calendrier/ui/const/pages.dart';
 import 'package:calendrier/ui/pages/get_started.dart';
 import 'package:calendrier/ui/pages/onBoarding/auth.dart';
 import 'package:flutter/material.dart';
@@ -15,13 +14,20 @@ class Calendrier extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final route = RoutesOfPages().routes;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: route.keys.elementAt(0),
+      initialRoute: '/',
       theme: ThemeData(
         scaffoldBackgroundColor: secondColor,
       ),
+      routes: {
+        "/": (context) {
+          return const GetStarted();
+        },
+        "/auth": (context) {
+          return const StudentAuth();
+        },
+      },
     );
   }
 }
