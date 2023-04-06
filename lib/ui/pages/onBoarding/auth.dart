@@ -1,6 +1,7 @@
 import 'package:calendrier/ui/const/colors.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/reusable.dart';
+import '../home/homepage.dart';
 
 class StudentAuth extends StatelessWidget {
   const StudentAuth({super.key});
@@ -45,6 +46,7 @@ class StudentAuth extends StatelessWidget {
                     } else if (value.length < 13 || value.length > 13) {
                       return "id not valid";
                     }
+                    //check from the users data base if the data entered is valid (student id's)
                     return null;
                   },
                   cursorColor: primaryColor,
@@ -76,7 +78,15 @@ class StudentAuth extends StatelessWidget {
                         horizontal: 147,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      if (validId.currentState!.validate()) {
+                        Navigator.pushNamed(
+                          context,
+                          '/home',
+                          arguments: const HomePage(),
+                        );
+                      }
+                    },
                     child: const Text("Submit"),
                   ),
                 ),

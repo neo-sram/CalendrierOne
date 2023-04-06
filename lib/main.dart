@@ -1,7 +1,8 @@
 // ignore_for_file: unused_import
 
 import 'package:calendrier/ui/const/colors.dart';
-import 'package:calendrier/ui/pages/get_started.dart';
+import 'package:calendrier/ui/pages/home/homepage.dart';
+import 'package:calendrier/ui/pages/onBoarding/get_started.dart';
 import 'package:calendrier/ui/pages/onBoarding/auth.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,9 @@ class Calendrier extends StatelessWidget {
         "/auth": (context) {
           return const StudentAuth();
         },
+        "/home": (context) {
+          return const HomePage();
+        }
       },
     );
   }
