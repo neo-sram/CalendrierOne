@@ -51,10 +51,10 @@ class GetStarted extends StatelessWidget {
                       arguments: const StudentAuth(),
                     );
                   },
-                  child: Row(
+                  child: const Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         "Getting Started",
                         style: TextStyle(fontSize: 24),
