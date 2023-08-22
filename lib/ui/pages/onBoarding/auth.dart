@@ -1,87 +1,80 @@
-import 'package:calendrier/ui/const/colors.dart';
+import 'package:calendrier/ui/pages/onBoarding/workspace_name.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/reusable.dart';
+import 'package:calendrier/ui/const/colors.dart';
 
 class StudentAuth extends StatelessWidget {
   const StudentAuth({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final validId = GlobalKey<FormState>();
-    final idController = TextEditingController();
+    final authKey = GlobalKey<FormState>();
+    RegExp idRegex = RegExp(r'^2021524160\d{3}$');
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 90, left: 25, right: 25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                space(value: 50.0),
-                Image.asset("assets/images/auth_illus.png"),
-                space(value: 25.0),
-                Center(
-                  child: Text(
-                    "User",
-                    style: TextStyle(fontSize: 29, color: primaryColor),
-                  ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              space(value: 30.0),
+              Image.asset('assets/images/auth.png'),
+              space(value: 60.0),
+              Text(
+                'Please enter your student id !',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: primaryColor,
                 ),
-                space(value: 10),
-                Center(
-                  child: Text(
-                    " Authentication",
-                    style: TextStyle(fontSize: 29, color: primaryColor),
-                  ),
-                ),
-                space(value: 70.0),
-                TextFormField(
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  controller: idController,
-                  validator: (value) {
-                    if (value!.contains("@")) {
-                      return "value must be a valid id";
-                    } else if (value.isEmpty) {
-                      return "id must not be empty";
-                    } else if (value.length < 13 || value.length > 13) {
-                      return "id not valid";
-                    }
-                    return null;
-                  },
-                  cursorColor: primaryColor,
-                  decoration: InputDecoration(
-                    hintText: "202114...",
-                    hintStyle: TextStyle(color: Colors.grey[400]),
-                    enabled: true,
-                    border: const OutlineInputBorder(),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.green,
-                      ),
+              ),
+              Form(
+                key: authKey,
+                child: Column(
+                  children: <Widget>[
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "please enter a text !";
+                        } else if (!idRegex.hasMatch(value)) {
+                          return 'Id not valid !!';
+                        }
+                        return null;
+                      },
                     ),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 206, 202, 202),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: secondColor,
+                        backgroundColor: primaryColor,
+                        padding: const EdgeInsets.all(20.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-                space(value: 30),
-                Center(
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      elevation: 0.0,
-                      backgroundColor: primaryColor,
-                      padding: const EdgeInsetsDirectional.symmetric(
-                        vertical: 15,
-                        horizontal: 147,
+                      onPressed: () {
+                        if (authKey.currentState!.validate()) {
+                          Navigator.pushNamed(
+                            context,
+                            '/home',
+                            arguments: const WorkSpaceName(),
+                          );
+                        }
+                      },
+                      child: const Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Verify",
+                            style: TextStyle(fontSize: 24),
+                          ),
+                        ],
                       ),
-                    ),
-                    onPressed: () {},
-                    child: const Text("Submit"),
-                  ),
+                    )
+                  ],
                 ),
-              ],
-            ),
+              ),
+              space(value: 30.0),
+            ],
           ),
         ),
       ),
